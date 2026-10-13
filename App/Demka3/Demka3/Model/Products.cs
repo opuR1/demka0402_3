@@ -44,7 +44,7 @@ namespace Demka3.Model
                     return this.Price ?? 0;
                 }
                 decimal discountPercent = (decimal)this.Discount / 100;
-                decimal totalPrice = (this.Price ?? 0) / (1 - discountPercent);
+                decimal totalPrice = (this.Price ?? 0) * (1 - discountPercent);
                 return Math.Round(totalPrice, 2);
             }
         }

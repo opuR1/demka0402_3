@@ -25,7 +25,17 @@ namespace Demka3.Model
         public int CityId { get; set; }
         public string Street { get; set; }
         public Nullable<int> House { get; set; }
-    
+        public string FullAdress
+        {
+            get
+            {
+                string city = this.Cities.CityName;
+                string address = $"{PointIndex}, {city}, {Street}, {House}";
+                return address;
+            }
+        }
+
+
         public virtual Cities Cities { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders> Orders { get; set; }

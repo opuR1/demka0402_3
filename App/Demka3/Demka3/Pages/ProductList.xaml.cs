@@ -152,7 +152,7 @@ namespace Demka3.Pages
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new ProductEdit(null));
+            NavigationService.Navigate(new ProductEdit(null, _currentUser));
         }
 
         private void lbProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -165,7 +165,7 @@ namespace Demka3.Pages
                 }
                 if (lbProducts.SelectedItem is Products selectedProduct)
                 {
-                    NavigationService.Navigate(new ProductEdit(selectedProduct));
+                    NavigationService.Navigate(new ProductEdit(selectedProduct, _currentUser));
                 }
             }
         }
